@@ -57,9 +57,9 @@ public class Mercado extends Produto {
     private void RemoverProduto() {
         System.out.println("Qual o código do produto que deseja remover? ");
         String codigo = scanner.nextLine();
-        for (Produto produto : produtos) {
-            if (produto.getCodigo() == codigo) {
-                produtos.remove(produto);
+        for (int i = 0; i < produtos.size(); i++) {
+            if (produtos.get(i).getCodigo().equals(codigo)) {
+                produtos.remove(produtos.get(i));
                 System.out.println("Produto removido com sucesso!");
                 return;
             }
@@ -71,7 +71,7 @@ public class Mercado extends Produto {
         System.out.println("Qual o código do produto que deseja atualizar? ");
         String codigo = scanner.nextLine();
         for (Produto produto : produtos) {
-            if (produto.getCodigo() == codigo) {
+            if (produto.getCodigo().equals(codigo)) {
                 System.out.println("Produto: " + produto.getNome());
                 System.out.println("Quantidade: " + produto.getQuantidade());
                 System.out.println("Preço: " + produto.getPreco());
